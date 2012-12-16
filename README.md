@@ -1,4 +1,6 @@
 Mevis
 =====
 
-A mesh visualizer for ngether
+Mevis is visualizer for [ngether](https://github.com/Klab-Berlin/ngether).
+
+It shows the frequency on spots / hubs and additional information about the usage.
