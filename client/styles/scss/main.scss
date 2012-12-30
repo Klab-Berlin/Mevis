@@ -1,0 +1,160 @@
+// Site specific
+@import "base";
+
+
+// Container
+// ========
+
+.container {
+
+	width: 80%;	//800px;
+	background-color: $color-mu-button;
+
+	border-left: 2px solid $color-border;
+	border-right: 2px solid $color-border;
+}
+
+
+//  Header
+//  ======
+
+.header {
+
+	height: 10%;
+	border-bottom: 2px solid $color-border;
+	background: $color-orange;
+}
+
+
+.logo {
+
+	@include height;
+
+	position: relative;
+
+
+	& > a {
+
+		position: absolute;
+		left: 15%;
+		top: 15%;
+
+		@include font-size(30);
+	}
+}
+
+
+.navigation {
+
+	@include height;
+
+	width: 40%;
+
+	& > li {
+
+		@include font-size(20);
+		// @include transition(0.5s);
+
+		// margin: 4% 10%;
+		border: 2px solid;
+		cursor: pointer;
+	}
+
+
+	// example colors
+	& li:nth-child(1) {
+
+		background-color	: $color-ex1-background;
+		border-color		: $color-ex1-background;
+
+		&:hover {
+
+			border-color	: $color-ex1-border;
+		}
+	}
+
+	& li:nth-child(2) {
+
+		background-color	: $color-ex2-background;
+		border-color		: $color-ex2-background;
+
+		&:hover {
+
+			border-color	: $color-ex2-border;
+		}
+	}
+
+	& li:nth-child(3) {
+
+		background-color	: $color-ex3-background;
+		border-color		: $color-ex3-background;
+
+		&:hover {
+
+			border-color	: $color-ex3-border;
+		}
+	}
+
+
+
+}
+
+
+//  Content
+//  =======
+
+.content {
+
+	height	: 80%;
+	padding	: 2%;
+}
+
+
+
+.main {
+
+	height	: 70%;
+	margin	: 1% 0;
+}
+
+
+.info {
+
+	@include height;
+
+	color		: $color-elements-text;
+	background	: $color-info-background;
+}
+
+
+// .type {}
+
+.details {
+
+	text-align	: left;
+	padding-left: 10%;
+}
+
+
+
+.map {
+
+	@include height;
+
+	border: 1px solid $color-border;
+}
+
+
+
+
+.legend {
+
+	height			: 20%;
+
+	text-align		: left;
+	padding			: 1%;
+
+	color			: $color-elements-text;
+	background		: $color-green;
+}
+

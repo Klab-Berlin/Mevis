@@ -1,0 +1,53 @@
+
+// Includes
+// ========
+
+@import "base/all";
+@import "mixins/all";
+@import "module/all";
+
+
+// Base
+// ====
+
+
+html, body {
+
+	@include height;
+}
+
+body {
+
+	@include font-size;
+
+	position			: relative;
+
+	overflow-y			: scroll;
+
+	color				: $color-text;
+	background-color	: $color-mu-background;
+}
+
+
+
+a {
+	text-decoration: none;
+	color: $color-link-default;
+
+	@include transition;
+
+	&:hover {
+
+		color: $color-link-hover;
+	}
+}
+
+
+
+.container {
+
+	@include height;
+
+	@extend .wrap;
+	@extend .center;
+}
