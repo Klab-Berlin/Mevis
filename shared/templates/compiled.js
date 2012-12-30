@@ -1,0 +1,1 @@
+var templates = {test: function anonymous(it) {var out='<div>Hi '+(it.name)+'!</div><div>'+(it.age || '')+'</div>';return out;}};
