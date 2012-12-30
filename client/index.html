@@ -5,61 +5,134 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
 
-    <meta charset="utf-8">
+	<meta charset="utf-8">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="content-type" content="text/html,charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="content-type" content="text/html,charset=utf-8" />
 
-    <title>Mevis - show the mesh</title>
+	<title>Mevis - show the mesh</title>
 
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <!-- meta -->
-    <meta name="title" content="Mevis" />
-    <meta name="description" content="show the mesh" />
-    <meta name="keywords" content="data,ngether,visualizer" />
+	<!-- meta -->
+	<meta name="title" content="Mevis" />
+	<meta name="description" content="show the mesh" />
+	<meta name="keywords" content="data,ngether,visualizer" />
 
-    <link rel="canonical" href="http://mevis.meinunterricht.de/" />
+	<link rel="canonical" href="http://mevis.meinunterricht.de/" />
 
-    <meta property="og:title" content="Mevis" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://mevis.meinunterricht.de/" />
-    <meta property="og:description" content="show the mesh" />
+	<meta property="og:title" content="Mevis" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://mevis.meinunterricht.de/" />
+	<meta property="og:description" content="show the mesh" />
 
+	<link rel="stylesheet" type="text/css" href="styles/vendor/normalize.css" />
+	<!--[if IE]><link href="style/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="styles/vendor/normalize.css" />
-    <!--[if IE]><link href="style/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
 
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <script src="scripts/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="scripts/vendor/modernizr-2.6.2.min.js"></script>
 
 </head>
 <body>
 
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-    <![endif]-->
+	<!--[if lt IE 7]>
+		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+	<![endif]-->
+
+	<!-- wrap, center -->
+	<div class="container">
+
+		<!-- logo, navigation -->
+		<div class="header">
+
+			<div class="c-10 left logo">
+				<a href="">Mevis</a>
+			</div>
+
+			<ul id="links" class="line c-40 right navigation ">
+				<!-- <li>MU</li>
+				<li>LC</li>
+				<li>KLab</li> -->
+			</ul>
+
+		</div>
 
 
-    <div class="container">
-
-        <h1>Mevis</h1>
-
-    </div>
+		<!-- interaction -->
+		<div class="content">
 
 
-    <script src="scripts/vendor/pubBubSub.js"></script>
+			<!-- filter, search -->
+			<div class="wrap settings">
 
-    <script src="scripts/vendor/doT.min.js"></script>
-    <script src="scripts/vendor/jquery-1.8.3.min.js"></script>
-    <script src="scripts/vendor/raphael-min.js"></script>
-    <script src="scripts/vendor/kartograph.min.js"></script>
+				<select class="c-20 left list">
+					<option value="1">Fileserver</option>
+		            <option value="2">regular Spot</option>
+		            <option value="3">other PoolId</option>
+				</select>
+
+				<input type="text" class="c-10 right search" placeholder="Search" />
+
+			</div>
 
 
-    <script src="scripts/map.js"></script>
+			<!-- handling -->
+			<div class="wrap main">
+
+				<!-- information -->
+				<div class="c-30 left info">
+
+					<h3 class="type">Spot</h3>
+
+					<p class="details">
+						Id: vwcmu12345<br>
+						IPv4: 192.168.1.125<br>
+						Location: City, area, country<br>
+						UserData:<br>
+						a@b.de<br>
+						_id: 1234<br>
+						userType: 1<br>
+						timeOnSite: 12min<br>
+						Schreibtische: 4v
+						Dokumente: 18<br>
+					</p>
+
+				</div>
+
+				<!-- control, show -->
+				<div class="c-65 right map">
+					<img src="assets/placeholder.png" class="map">
+				</div>
+
+			</div>
+
+			<!-- explanation -->
+			<div class="legend">
+				<ul>
+					<li>Cluster:&nbsp;&nbsp;Eine Sammelsteller der Nodes.</li>
+					<li>Hubs:&nbsp;&nbsp;&nbsp;&nbsp;Ein Node, welche Spots miteinander verbindet.</li>
+					<li>Spots:&nbsp;&nbsp;&nbsp;&nbsp;Ein Node, auf welchen Clients zugreifen können.</li>
+					<li>Clients:&nbsp;&nbsp;Endnutzer</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+	<script src="scripts/vendor/doT.min.js"></script>
+	<script src="scripts/vendor/jquery-1.8.3.min.js"></script>
+
+	<script src="../shared/templates/compiled.js"></script>
+
+	<script src="scripts/ui.js"></script>
 
 </body>
 </html>
