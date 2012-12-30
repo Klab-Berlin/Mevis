@@ -3,12 +3,7 @@
 	"version"		: "0.1.0",
 	"description"	: "Serving Mevis (ngether visualizer) with data ",
 
-	"keywords"		: [
-		"maps",
-		"visual",
-		"ngether",
-		"klab"
-	],
+	"keywords"		: [	"maps",	"visual", "ngether", "klab" ],
 
 	"homepage"		: "https://github.com/autarc/Mevis",
 
