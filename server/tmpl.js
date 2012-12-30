@@ -1,6 +1,7 @@
+// Modules
+// =======
 var fs	= require('fs'),
 	doT	= require('dot');
-
 
 
 function create ( path, callback ) {

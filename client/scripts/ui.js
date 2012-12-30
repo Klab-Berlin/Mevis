@@ -1,6 +1,4 @@
-$(function(){
-
-
+(function($){
 
 	// navigation bar
 	// var linkContainer = $('#links'),
@@ -17,7 +15,6 @@ $(function(){
 	//	$(link).width( part );
 	// });
 
+})(jQuery);
 
 
-
-});
