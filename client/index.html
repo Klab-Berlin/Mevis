@@ -29,8 +29,12 @@
 	<meta property="og:description" content="show the mesh" />
 
 	<link rel="stylesheet" type="text/css" href="styles/vendor/normalize.css" />
-	<!--[if IE]><link href="style/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet" type="text/css" href="styles/vendor/leaflet.css" />
+	<!--[if lte IE 8]>
+	<link rel="stylesheet" type="text/css" href="styles/vendor/leaflet.ie.css" />
 	<![endif]-->
+
 
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 
@@ -88,17 +92,15 @@
 				</div>
 
 				<!-- control, show -->
-				<div class="c-65 right map">
-					<img src="assets/placeholder.png" class="map">
-				</div>
+				<div id="map" class="c-65 right map"></div>
 
 			</div>
 
 			<!-- explanation -->
 			<div class="legend">
 				<ul>
-					<li>Cluster:&nbsp;&nbsp;Eine Sammelsteller der Nodes.</li>
-					<li>Hubs:&nbsp;&nbsp;&nbsp;&nbsp;Ein Node, welche Spots miteinander verbindet.</li>
+					<li>Cluster:&nbsp;&nbsp;Ein Knotenpunkt verbundener Nodes.</li>
+					<li>Hubs:&nbsp;&nbsp;&nbsp;&nbsp;Ein Node, welcher Spots miteinander verbindet.</li>
 					<li>Spots:&nbsp;&nbsp;&nbsp;&nbsp;Ein Node, auf welchen Clients zugreifen können.</li>
 					<li>Clients:&nbsp;&nbsp;Endnutzer</li>
 				</ul>
@@ -114,6 +116,8 @@
 	<script src="scripts/vendor/doT-1.0.min.js"></script>
 	<script src="scripts/vendor/jquery-1.8.3.min.js"></script>
 	<script src="scripts/vendor/engine.io-client.js"></script>
+	<script src="scripts/vendor/leaflet.js"></script>
+
 
 	<!-- config & templates -->
 	<script src="config.js"></script>
@@ -125,7 +129,7 @@
 
 	<script src="scripts/ui.js"></script>
 	<script src="scripts/info.js"></script>
-
+	<script src="scripts/map.js"></script>
 
 </body>
 </html>

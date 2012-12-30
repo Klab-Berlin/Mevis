@@ -10,6 +10,9 @@
 
 		console.log('[open] - id: ', socket.id);
 
+		mv.handle.init();
+
+
 		socket.onmessage = function ( msg ) {
 
 			msg = JSON.parse(msg.data);
@@ -17,7 +20,9 @@
 			mv.handle[ msg.action ]( msg.data );
 		};
 
-		socket.onclose = function ( msg ) {
+		socket.onclose = function() {
+
+			console.log('[close]');
 
 		};
 
@@ -33,13 +38,32 @@
 	 * @param  String type - cluster/node/client
 	 * @param  String id   - identifier
 	 */
-	mv.request = function ( type, id ) {
+	mv.request = function ( lng, lat ) {
 
 		socket.send( JSON.stringify({
 
 			id		: socket.id,
 
 			action	: 'request',
+			data	: {
+
+				lng	: lng,
+				lat	: lat
+			}
+		}));
+	};
+
+
+	/**
+	 * filters on selection
+	 */
+	mv.filter = function ( type, id ) {
+
+		socket.send( JSON.stringify({
+
+			id		: socket.id,
+
+			action	: 'filter',
 			data	: {
 
 				type: type,

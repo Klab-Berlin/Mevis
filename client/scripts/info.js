@@ -22,16 +22,6 @@
 	$filter.on('change', select );
 
 
-
-	// example request
-	setTimeout( function(){
-
-		// asnc init
-		select();
-
-	}, 300);
-
-
 	// Helper
 	// ======
 
@@ -42,7 +32,7 @@
 
 		current = $filter.find('option:selected')[0].text.toLowerCase();
 
-		mv.request( current, '*' );
+		mv.filter( current, '*' );
 	}
 
 
@@ -56,7 +46,10 @@
 			content = tmpl[ type ]( data );
 
 			$info.html( content );
-		}
+		},
+
+		//
+		select: select
 	};
 
 	mv.info = info;

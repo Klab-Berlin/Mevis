@@ -21,13 +21,29 @@ var handle = {
 		clients[socket.id] = socket;
 	},
 
-	request: function ( sid, data ) {
+
+	request: function( sid, data ) {
+
+		var list = [];
+
+		list.push( example.klab );
+
+		send( 'updateMarker', sid, {
+
+			list: list
+		});
+	},
+
+
+	filter: function ( sid, data ) {
 
 		var type	= data.type,
 			id		= data.id,
 
 			// different caches ?
 			geo		= ( id !== '*' ) ? cache[id] : null,
+			list	= [],
+
 			info;
 
 
@@ -39,14 +55,11 @@ var handle = {
 			cache[id] = geo;
 		}
 
-		send( 'lookup', sid, {
+		list.push( example.klab );
 
-			marker	: {
+		send( 'filter', sid, {
 
-				longitude	: geo.ll[0],
-				latitude	: geo.ll[1]
-			},
-
+			marker	: list,
 			info	: info
 		});
 	},

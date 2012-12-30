@@ -5,6 +5,27 @@ var example = {
 
 	ip: '88.72.237.61',
 
+	klab: {
+
+		data	: {
+
+			lat		: 52.5167,
+			lng		: 13.4,
+			name	: 'KLab-Berlin',
+			details	: 'Immer am Unterrichten'
+		},
+
+		info	: {
+
+			type	: 'Cluster',
+			id		: '42',
+			city	: 'Berlin/Würzburg',
+			area	: 'The Internet',
+			country	: 'Deutschland',
+			nodes	: 16
+		}
+	},
+
 	spot	: { // node
 
 		type		: 'Spot',
