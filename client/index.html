@@ -69,10 +69,10 @@
 			<!-- filter, search -->
 			<div class="wrap settings">
 
-				<select class="c-20 left list">
-					<option value="1">Fileserver</option>
-		            <option value="2">regular Spot</option>
-		            <option value="3">other PoolId</option>
+				<select id="filter" class="c-20 left list">
+					<option value="1">Spot</option> <!-- Fileserver -->
+		            <option value="2">Client</option>
+		            <option value="3">Cluster</option> <!-- other PoolId -->
 				</select>
 
 				<input type="text" class="c-10 right search" placeholder="Search" />
@@ -84,23 +84,7 @@
 			<div class="wrap main">
 
 				<!-- information -->
-				<div class="c-30 left info">
-
-					<h3 class="type">Spot</h3>
-
-					<p class="details">
-						Id: vwcmu12345<br>
-						IPv4: 192.168.1.125<br>
-						Location: City, area, country<br>
-						UserData:<br>
-						a@b.de<br>
-						_id: 1234<br>
-						userType: 1<br>
-						timeOnSite: 12min<br>
-						Schreibtische: 4v
-						Dokumente: 18<br>
-					</p>
-
+				<div id="info" class="c-30 left info">
 				</div>
 
 				<!-- control, show -->
@@ -127,12 +111,13 @@
 
 
 
-	<script src="scripts/vendor/doT.min.js"></script>
+	<script src="scripts/vendor/doT-1.0.min.js"></script>
 	<script src="scripts/vendor/jquery-1.8.3.min.js"></script>
 
 	<script src="../shared/templates/compiled.js"></script>
 
 	<script src="scripts/ui.js"></script>
+	<script src="scripts/info.js"></script>
 
 </body>
 </html>
