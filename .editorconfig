@@ -4,8 +4,8 @@ root = true
 
 [*]
 
-indent_style = tabs
-indent_size = 4
+indent_style = spaces
+indent_size = 2
 
 end_of_line = lf
 charset = utf-8
