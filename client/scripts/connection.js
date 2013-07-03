@@ -1,75 +1,55 @@
 (function(){
 
-	// handle connection
-	var socket = mv.socket = eio( 'ws://' + config.server + ':' + config.port );
+  // handle connection
+  var socket = mv.socket = new Socket( 'localhost:2020', { autoReconnect: false });
 
-	/**
-	 * socket handling
-	 */
-	socket.onopen = function() {
+  socket.on('open', function() {
 
-		console.log('[open] - id: ', socket.id);
+    console.log('[open] - id: ', socket.id);
 
-		mv.handle.init();
+    mv.handle.init();
 
 
-		socket.onmessage = function ( msg ) {
+    socket.on('message', function ( msg, e ) {
 
-			msg = JSON.parse(msg.data);
+      // console.log('[message]');
+      mv.handle[ msg.action ]( msg.data );
+    });
 
-			mv.handle[ msg.action ]( msg.data );
-		};
+    socket.on('close', function ( e ) {
 
-		socket.onclose = function() {
+      console.log('[close]');
+    });
 
-			console.log('[close]');
+    socket.on('error', function ( e ) {
 
-		};
+      console.log('[error]');
+    });
 
-		socket.onerror = function ( err ) {
-
-			console.log('[error] ', err );
-		};
-	};
-
-
-	/**
-	 * request data from the server
-	 * @param  String type - cluster/node/client
-	 * @param  String id   - identifier
-	 */
-	mv.request = function ( lng, lat ) {
-
-		socket.send( JSON.stringify({
-
-			id		: socket.id,
-
-			action	: 'request',
-			data	: {
-
-				lng	: lng,
-				lat	: lat
-			}
-		}));
-	};
+  });
 
 
-	/**
-	 * filters on selection
-	 */
-	mv.filter = function ( type, id ) {
 
-		socket.send( JSON.stringify({
+  /**
+   * request data from the server
+   * @param  String type - cluster/node/client
+   * @param  String id   - identifier
+   */
 
-			id		: socket.id,
+  mv.request = function ( lng, lat ) {
+    console.log(lng, lat);
+    socket.send( 'request', { lng: lng, lat: lat } );
+  };
 
-			action	: 'filter',
-			data	: {
 
-				type: type,
-				id	: id
-			}
-		}));
-	};
+  /**
+  * filters on selection
+  */
+
+  mv.filter = function ( type, id ) {
+    console.log(type, id);
+      socket.send( 'filter', { type: type, id: id  } );
+  };
+
 
 })();

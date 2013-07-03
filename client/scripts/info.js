@@ -48,7 +48,6 @@
 			$info.html( content );
 		},
 
-		//
 		select: select
 	};
 
