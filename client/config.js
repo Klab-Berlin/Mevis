@@ -4,7 +4,7 @@
 window.config = {
 
 	server	: 'mevis.dev',
-	port	: 2020
+	port    : 2020
 };
 
 
