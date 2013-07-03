@@ -1,8 +1,0 @@
-# rewrite
-Options +FollowSymlinks
-RewriteEngine On
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteRule ^(.*)$ /client/$1 [R=301,L]
