@@ -1,0 +1,20 @@
+{
+  "name"          : "Mevis",
+  "version"       : "0.2.5",
+  "description"   : "A mesh visualizer using ngether",
+  "keywords"      : [ "ngether", "visual", "data", "maps" ],
+  "homepage"      : "https://github.com/klab/Mevis",
+  "licence"       : "MIT",
+
+  "dependencies"  : {
+    "geoip-lite"  : "1.0.10",
+    "websocket"   : "latest",
+    "minions"     : "latest",
+    "bubpubsub"   : "latest",
+    "dot"         : "latest"
+  },
+
+  "engine"        : {
+    "node" : ">= 0.6.0"
+  }
+}

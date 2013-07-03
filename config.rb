@@ -9,14 +9,14 @@
 # Config
 # ======
 
-project_type		= :stand_alone
-environment			= :production	#:development
+project_type		  = :stand_alone
+environment			  = :production	#:development
 preferred_syntax	= :scss
-http_path			= "/"
-css_dir				= "client/styles"
-sass_dir			= "client/styles/scss"
-images_dir			= "client/assets"
-javascripts_dir 	= "client/scripts"
+http_path			    = "/public/"
+css_dir				    = "/public/styles"
+sass_dir			    = "/public/styles/scss"
+images_dir			  = "/public/assets"
+javascripts_dir 	= "/public/scripts"
 relative_assets 	= true
 
 # Disable query vars image.png?1234 when using asset helpers, e.g., image-url()
